@@ -1,0 +1,15 @@
+#LOCAL ==========================================
+RewriteEngine On
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+#ONLINE =========================================
+#<IfModule mod_rewrite.c>
+#RewriteBase /servicetrack/
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php?/$0 [QSA,L]
+#</IfModule>
